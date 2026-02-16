@@ -109,18 +109,68 @@ const ElectronegativityBridge = () => {
                             className="stages-container"
                         >
                             {(stage === 'en-values' || showAllStages) && (
-                                <ElectronegativityComparison
-                                    metal={selectedMetal}
-                                    oxygenEN={OXYGEN_EN}
-                                    difference={enDifference}
-                                />
+                                <>
+                                    <ElectronegativityComparison
+                                        metal={selectedMetal}
+                                        oxygenEN={OXYGEN_EN}
+                                        difference={enDifference}
+                                    />
+                                    {stage === 'en-values' && !showAllStages && (
+                                        <motion.div
+                                            className="inline-navigation"
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ delay: 3 }}
+                                        >
+                                            <div className="continue-prompt">
+                                                <p>Now let's see what happens to the electrons...</p>
+                                                <motion.div
+                                                    className="arrow-down"
+                                                    animate={{ y: [0, 10, 0] }}
+                                                    transition={{ duration: 1.5, repeat: Infinity }}
+                                                >
+                                                    ↓
+                                                </motion.div>
+                                            </div>
+                                            <button onClick={handleNextStage} className="btn btn-primary btn-pulse">
+                                                <span>Show Electron Flow Animation</span>
+                                                <span className="arrow">→</span>
+                                            </button>
+                                        </motion.div>
+                                    )}
+                                </>
                             )}
 
                             {(stage === 'electron-flow' || showAllStages) && (
-                                <ElectronFlowAnimation
-                                    difference={enDifference}
-                                    metalColor={selectedMetal.color}
-                                />
+                                <>
+                                    <ElectronFlowAnimation
+                                        difference={enDifference}
+                                        metalColor={selectedMetal.color}
+                                    />
+                                    {stage === 'electron-flow' && !showAllStages && (
+                                        <motion.div
+                                            className="inline-navigation"
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ delay: 2 }}
+                                        >
+                                            <div className="continue-prompt">
+                                                <p>Next, see what happens when the bond breaks...</p>
+                                                <motion.div
+                                                    className="arrow-down"
+                                                    animate={{ y: [0, 10, 0] }}
+                                                    transition={{ duration: 1.5, repeat: Infinity }}
+                                                >
+                                                    ↓
+                                                </motion.div>
+                                            </div>
+                                            <button onClick={handleNextStage} className="btn btn-primary btn-pulse">
+                                                <span>Show Proton Release</span>
+                                                <span className="arrow">→</span>
+                                            </button>
+                                        </motion.div>
+                                    )}
+                                </>
                             )}
 
                             {(stage === 'proton-release' || showAllStages) && (
@@ -146,20 +196,8 @@ const ElectronegativityBridge = () => {
                         </button>
 
                         {stage === 'en-values' && !showAllStages && (
-                            <button onClick={handleNextStage} className="btn btn-primary">
-                                Next: Show Electron Flow →
-                            </button>
-                        )}
-
-                        {stage === 'electron-flow' && !showAllStages && (
-                            <button onClick={handleNextStage} className="btn btn-primary">
-                                Next: Show Proton Release →
-                            </button>
-                        )}
-
-                        {stage === 'en-values' && !showAllStages && (
                             <button onClick={handleShowAll} className="btn btn-accent">
-                                Show Complete Process
+                                Skip to Complete Process
                             </button>
                         )}
                     </motion.div>
