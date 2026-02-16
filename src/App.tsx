@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import ElectronegativityBridge from './components/ElectronegativityBridge';
 import './App.css';
 
