@@ -1,0 +1,351 @@
+.proton-release-visualization {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+.proton-release-visualization h3 {
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--dark-bg);
+    margin-bottom: 0.5rem;
+}
+
+.release-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.molecule-section {
+    background: linear-gradient(135deg, rgba(236, 240, 241, 0.5), rgba(189, 195, 199, 0.3));
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    position: relative;
+    min-height: 250px;
+}
+
+.before-after {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.state-box {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.state-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.molecule-display {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--dark-bg);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+}
+
+.molecule-part {
+    display: inline-flex;
+    align-items: center;
+}
+
+.molecule-part.metal {
+    color: var(--primary-color);
+}
+
+.molecule-part.oxygen {
+    color: #e74c3c;
+}
+
+.molecule-part.hydrogen {
+    color: #3498db;
+}
+
+.molecule-part.hydroxide {
+    color: #e74c3c;
+}
+
+.bond {
+    color: #7f8c8d;
+    font-weight: 400;
+}
+
+.bond.weakened {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.state-description {
+    font-size: 0.9rem;
+    color: #555;
+    font-style: italic;
+}
+
+.transition-arrow {
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.proton-release {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.proton-particle {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    border: 4px solid #d68910;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 0 30px rgba(243, 156, 18, 0.6);
+    animation: proton-glow 1s ease-in-out infinite;
+}
+
+@keyframes proton-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 30px rgba(243, 156, 18, 0.6);
+    }
+
+    50% {
+        box-shadow: 0 0 50px rgba(243, 156, 18, 0.9);
+    }
+}
+
+.release-label {
+    background: var(--warning-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.acidity-indicator {
+    display: flex;
+    justify-content: center;
+}
+
+.acidity-card {
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 100%;
+    border: 3px solid;
+}
+
+.acidity-card.strong {
+    border-color: #e74c3c;
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.05), white);
+}
+
+.acidity-card.moderate {
+    border-color: #f39c12;
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.05), white);
+}
+
+.acidity-card.weak {
+    border-color: #3498db;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), white);
+}
+
+.acidity-card.minimal {
+    border-color: #95a5a6;
+    background: linear-gradient(135deg, rgba(149, 165, 166, 0.05), white);
+}
+
+.acidity-icon {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.acidity-card h4 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--dark-bg);
+    margin-bottom: 1rem;
+}
+
+.acidity-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.acidity-meter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.meter-label {
+    font-weight: 600;
+    color: var(--dark-bg);
+    text-align: center;
+}
+
+.meter-bar {
+    height: 30px;
+    background: #ecf0f1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.meter-fill {
+    height: 100%;
+    border-radius: 15px;
+    transition: width 1s ease-out;
+}
+
+.meter-fill.strong {
+    background: linear-gradient(90deg, #f39c12, #e74c3c);
+}
+
+.meter-fill.moderate {
+    background: linear-gradient(90deg, #3498db, #f39c12);
+}
+
+.meter-fill.weak {
+    background: linear-gradient(90deg, #2ecc71, #3498db);
+}
+
+.meter-fill.minimal {
+    background: linear-gradient(90deg, #ecf0f1, #95a5a6);
+}
+
+.meter-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+}
+
+.chemical-equation {
+    background: rgba(52, 152, 219, 0.05);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.chemical-equation h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.equation-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-bg);
+}
+
+.equation-arrow {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.equation-plus {
+    font-size: 1.5rem;
+    color: #7f8c8d;
+}
+
+.equation-part.proton {
+    color: var(--warning-color);
+    font-weight: 700;
+    background: rgba(243, 156, 18, 0.1);
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+}
+
+.key-insight {
+    margin-top: 1rem;
+}
+
+.insight-box {
+    background: linear-gradient(135deg, rgba(46, 204, 113, 0.1), rgba(52, 152, 219, 0.1));
+    border-left: 4px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+}
+
+.insight-box h4 {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.75rem;
+}
+
+.insight-box p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .before-after {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .transition-arrow {
+        transform: rotate(90deg);
+        font-size: 2rem;
+    }
+
+    .molecule-display {
+        font-size: 1.5rem;
+    }
+
+    .proton-particle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    .equation-display {
+        font-size: 1.1rem;
+    }
+}
