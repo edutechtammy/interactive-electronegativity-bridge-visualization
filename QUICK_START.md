@@ -14,7 +14,7 @@ npm install
 npm run dev
 ```
 
-The application will open at `http://localhost:5173`
+The application will open at `http://localhost:5173` or try http://localhost:5173/interactive-electronegativity-bridge-visualization/
 
 ## 📱 Using the Visualization
 

@@ -111,20 +111,20 @@ const ElectronFlowAnimation = ({ difference, metalColor }: ElectronFlowAnimation
                     </motion.div>
                 </div>
 
-                {/* Electron flow particles */}
+                {/* Electron flow particles - H → O direction */}
                 <div className="electron-flow">
                     {isAnimating && Array.from({ length: particleCount }).map((_, i) => (
                         <motion.div
                             key={i}
                             className="electron-particle"
                             initial={{
-                                x: -50,
+                                x: 180,
                                 y: 0,
                                 opacity: 0,
                                 scale: 0
                             }}
                             animate={{
-                                x: 120,
+                                x: 10,
                                 y: Math.sin(i * 0.5) * 20,
                                 opacity: [0, 1, 1, 0],
                                 scale: [0, 1, 1, 0]
@@ -146,8 +146,8 @@ const ElectronFlowAnimation = ({ difference, metalColor }: ElectronFlowAnimation
                 <motion.div
                     className="density-gradient"
                     style={{
-                        background: `linear-gradient(to right, 
-              ${metalColor}20 0%, 
+                        background: `linear-gradient(to left, 
+              rgba(52, 152, 219, 0.2) 0%, 
               transparent 30%, 
               #e74c3c40 70%, 
               #e74c3c60 100%)`
@@ -174,7 +174,7 @@ const ElectronFlowAnimation = ({ difference, metalColor }: ElectronFlowAnimation
                             transition={{ delay: 1.2 }}
                         >
                             <span className="step-number">1</span>
-                            <p>Oxygen's high electronegativity pulls electron density from the O-H bond</p>
+                            <p>Metal cation (M^n+) pulls electron density through the M-O bond due to its high positive charge</p>
                         </motion.div>
                         <motion.div
                             className="step"
@@ -183,7 +183,7 @@ const ElectronFlowAnimation = ({ difference, metalColor }: ElectronFlowAnimation
                             transition={{ delay: 1.5 }}
                         >
                             <span className="step-number">2</span>
-                            <p>Electrons shift toward oxygen, away from hydrogen</p>
+                            <p>Oxygen compensates by pulling electron density from the O-H bond (shown by e⁻ flow)</p>
                         </motion.div>
                         <motion.div
                             className="step"
@@ -192,7 +192,7 @@ const ElectronFlowAnimation = ({ difference, metalColor }: ElectronFlowAnimation
                             transition={{ delay: 1.8 }}
                         >
                             <span className="step-number">3</span>
-                            <p>The O-H bond weakens, making H⁺ release more likely</p>
+                            <p>The O-H bond weakens as electrons shift toward oxygen, making H⁺ release more likely</p>
                         </motion.div>
                     </div>
                     <div className="intensity-indicator">
